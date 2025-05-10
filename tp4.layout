@@ -1,10 +1,134 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<CodeBlocks_layout_file>
-	<FileVersion major="1" minor="0" />
-	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-</CodeBlocks_layout_file>
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Etudiant{
+int id;
+char nom[50];
+float moy;
+struct Etudiant*suivant;
+struct Etudiant*precedent;
+
+}Etudiant;
+Etudiant*creer_Etudiant(){
+nv*Etudiant=(Etudiant*)malloc(sizeof(Etudiant));
+if(nv==NULL){
+    printf("erreur d'alloc");
+}
+ printf("saisir id :");
+ scanf("%d",&nv->id);
+ printf("saisir le nom ");
+ scanf("%s",nv->nom);
+ printf("saisir la moy");
+ scanf("%f",&nv->moy);
+ nv->suivant=NULL;
+ nv->precedent=NULL;
+}nv;
+int longueur(Etudiant*tete,compt){
+compt=0;
+Etudiant*temp=tete;
+while(temp!=NULL);
+compt++;
+temp=temp->suivant;
+}compt;
+Etudiant*ajouter_position(etudiant*tete,etudiant*nv,int position){
+if(position<0||position>longueur){
+    printf("la position est invalide");
+}
+if(position==0){
+    nv->suivant=tete;
+}
+if(tete!=NULL){
+    tete->precedent=nv;
+}return nv;
+Etudiant*temp=tete;
+for(int i=0;i<pos-1;i++);
+temp=temp->suivant;
+nv->suivant=temp->suivant;
+nv->precedent=temp;
+if(temp->suivant!=NULL){
+    temp->suivant->precedent=nv;
+    temp->suivant=nv;
+}
+}
+Etudiant*supprimer_position(Etudiant*tete,int pos){
+if(tete==NULL||pos<0){
+    printf("la liste est vide");
+}return tete;
+Etudiant*temp=tete;
+if(pos==0){
+    temp=temp->suivant;
+    if(temp!=NULL){
+    tete->precedent=NUUL;
+    free(temp);
+    }
+}
+for(int i=0;i<pos&&temp!=NULL;i++){
+    temp=temp->suivant;
+}
+
+
+}
+void afficher_liste(Etudiant*tete){
+    Etudiant*temp=tete;
+printf("donner le nbre des etudiants de la liste");
+while(temp!=NULL){
+    printf("id:%d,Nom:%s,moy:%f",temp->id,temp->moy);
+    temp=temp->suivant;
+}
+}
+Etudiant*dernier_cellule(Etudiant*tete){
+    if(tete=NULL){
+
+    }return NULL;
+    Etudiant*temp=tete;
+    while(temp->suivant!=NULL){
+        temp=temp->suivant;
+    }
+}return temp;
+
+void afficher_liste_inverse(Etudiant*dernier){
+Etudiant*temp=dernier;
+printf("donner le nbre des etudiants de liste inverse");
+while(temp!=NULL{
+       printf("id:%d,Nom:%s,moy:%f",temp->id,temp->moy);
+    temp=temp->precedent;
+
+      }
+
+}
+int chercher_Etudiant(Etudiant*tete,int id){
+Etudiant*temp=tete;
+while(temp!=NULL){
+    if(temp->id=id){
+
+    }return 1;
+    temp=temp->suivant;
+}return 0;
+}
+Etudiant_moy(Etudiant*tete,int pos,float nv_moy){
+if(tete==NULL||pos<0||pos>==longueur){
+    printf("la position est invalider");
+}
+Etudiant*temp=tete;
+for(int i=0;i<pos;i++)
+    temp=temp->suivant;
+temp->moy=nv_moy;
+
+}return tete;
+int main(){
+do{
+    printf("\nMenu:\n");
+    printf("ajouter un etudiant");
+    printf("afficher la liste");
+
+}
+
+
+
+
+
+
+
+}
+
+
